@@ -1,5 +1,6 @@
 package ru.netology.testweb;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -19,6 +20,7 @@ public class CardTest {
 
     @Test
     void shouldTest() {
+        Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Москва");
         $("[data-test-id='date'] input").doubleClick().sendKeys(BACK_SPACE);
